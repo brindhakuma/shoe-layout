@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+    font-family: Georgia, serif;
+    background: #f2f2f2;
+}
+
+/* Center wrapper */
+.wrapper {
+    width: 400px;
+    margin: 100px auto;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px;
+    border-radius: 11px;
+}
+.checkbox{
+    display: flex;
+    justify-content: center;
+}
+.checkbox input{
+    width: 20px;
+}
+.card {
+    background: white;
+    border-radius: 15px;
+    /* border: 1px solid #333; */
+    padding-bottom: 30px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #dcdcdc;
+}
+
+.tab-register {
+    background: #354e4d;
+    color: white;
+}
+
+.tab-login {
+    background: #dcdcdc;
+    color: black;
+}
+
+
+
+/* Forms */
+
+
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.passcode {
+    color: red;
+    text-align: right;
+}
+
+.logbtn,
+.regbtn {
+    text-align: center;
+}
+
+/* .logbtn button,
+.regbtn button {
+    padding: 12px 30px;
+    background: #354e4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+} */
+
+/* Toggle */
+.analogyone {
+    display: none;
+    
+}
+
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/IMG_20250530_190436_075.jpg" alt="Logo">
+        <span>StepUp</span>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+        <img src="images/icons8-search-20.png">
+        <input type="text" placeholder="Search here">
+    </div>
+
+    <!-- Menu -->
+    <nav class="main-menu">
+        <a href="demo.html" class="active">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html" class="active">Log in</a>
+        <a href="cart.html">
+        <div class="cart">
+            <img src="images/icons8-cart-20.png">
+            <span class="badge">1</span>
+        </div></a>
+    </nav>
+</header>
+
+<header class="top-header">
+    <div class="back">
+   <a href="contactus.html"> <p><img src="images/icons8-left-arrow-20.png"> Back</p></a>
+</div>
+    <h1 class="logo-text">StepUp.in</h1>
+
+    <hr>
+
+   <nav class="category-menu">
+       <p class="hovertext" id="dropping">Women</p>
+        <div class="mega-menu">
+  <div class="menu-column">
+   
+    <ul>
+         <h4>New Arrivals</h4>
+    <li>View all</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Sandals</h4>
+    <li>View all</li>
+    <li>Flat</li>
+    <li>Flip Flop</li>
+    <li>Slider</li>
+    <li>Strappy</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Trainers</h4>
+    <li>View all</li>
+    <li>Chunky</li>
+    <li>Lace Up</li>
+    <li>Slip On</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Canvas</h4>
+    <li>View all</li>
+    <li>Lace Up</li>
+    <li>Slip On</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Shoes</h4>
+    <li>View all</li>
+    <li>Ballerina</li>
+    <li>Brogue</li>
+    <li>Flat</li>
+    <li>Heel</li>
+    <li>Leather</li>
+    <li>Party</li>
+    <li>School</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Safety Footwear</h4>
+    <li>View all</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Boots</h4>
+    <li>View all</li>
+    <li>Ankle</li>
+    <li>Biker</li>
+    <li>Heel</li>
+    <li>Knee High</li>
+    <li>Lace up</li>
+    <li>Leather</li>
+    </ul>
+  </div>
+
+</div>
+
+        <p class="hovertextone" id="shopping">Men</p>
+        <div class="mega-menu">
+         <div class="menu-column">
+   
+    <ul>
+         <h4>New Arrivals</h4>
+    <li>View all</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Sandals</h4>
+    <li>View all</li>
+    <li>Flat</li>
+    <li>Flip Flop</li>
+    <li>Slider</li>
+    <li>Strappy</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Trainers</h4>
+    <li>View all</li>
+    <li>Chunky</li>
+    <li>Lace Up</li>
+    <li>Slip On</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Canvas</h4>
+    <li>View all</li>
+    <li>Lace Up</li>
+    <li>Slip On</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Shoes</h4>
+    <li>View all</li>
+    <li>Ballerina</li>
+    <li>Brogue</li>
+    <li>Flat</li>
+    <li>Heel</li>
+    <li>Leather</li>
+    <li>Party</li>
+    <li>School</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Safety Footwear</h4>
+    <li>View all</li>
+    </ul>
+  </div>
+
+  <div class="menu-column">
+    
+    <ul>
+        <h4>Boots</h4>
+    <li>View all</li>
+    <li>Ankle</li>
+    <li>Biker</li>
+    <li>Heel</li>
+    <li>Knee High</li>
+    <li>Lace up</li>
+    <li>Leather</li>
+    </ul>
+  </div>
+        </div>
+
+</div>
+        <p class="hovertexttwo" id="city">Kids</p>
+        <div class="mega-menuone">
+
+  <ul>
+    <h4>Girls</h4>
+    <li><a href="#">View all</a></li>
+    <li><a href="#">Sandals</a></li>
+    <li><a href="#">Canvas</a></li>
+    <li><a href="#">Trainers</a></li>
+    <li><a href="#">Shoes</a></li>
+    <li><a href="#">Boots</a></li>
+    <li><a href="#">Wellies</a></li>
+    <li><a href="#">Slippers</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Girls Trending</h4>
+    <li><a href="#">Save</a></li>
+    <li><a href="#">New arrivals</a></li>
+    <li><a href="#">Character footwear</a></li>
+    <li><a href="#">Online exclusive</a></li>
+    <li><a href="#">Back to school</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Back to schools</h4>
+    <li><a href="#">View all</a></li>
+    <li><a href="#">Girls school shoes</a></li>
+    <li><a href="#">Boys school shoes</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Canvas</h4>
+    <li><a href="#">View all</a></li>
+    <li><a href="#">Lace Up</a></li>
+    <li><a href="#">Slip On</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Boys</h4>
+    <li><a href="#">View all</a></li>
+    <li><a href="#">Sandals</a></li>
+    <li><a href="#">Canvas</a></li>
+    <li><a href="#">Trainers</a></li>
+    <li><a href="#">Shoes</a></li>
+    <li><a href="#">Boots</a></li>
+    <li><a href="#">Wellies</a></li>
+    <li><a href="#">Slippers</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Safety Footwear</h4>
+    <li><a href="#">View all</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Boys Trending</h4>
+    <li><a href="#">Save</a></li>
+    <li><a href="#">New arrivals</a></li>
+    <li><a href="#">Character exclusive</a></li>
+    <li><a href="#">Online exclusive</a></li>
+    <li><a href="#">Back to school</a></li>
+  </ul>
+
+  <ul class="menu-column">
+    <h4>Slippers</h4>
+    <li><a href="#">Boys slippers</a></li>
+    <li><a href="#">Girls slippers</a></li>
+  </ul>
+
+</div>
+
+
+        <p class="hovertexttwo" id="between">Brands</p>
+        <div class="mega-menuone">
+
+  <ul>
+    <li class="letter">B</li>
+    <li>Barbie</li>
+    <li>Beckett</li>
+    <li>Bluey</li>
+
+    <li class="letter">C</li>
+    <li>Comfort Plus</li>
+    <li>Comfy steps</li>
+    <li>Crocs</li>
+    <li>Cushion Walk</li>
+  </ul>
+
+  <ul>
+    <li class="letter">D</li>
+    <li>Disney frozen</li>
+    <li>Disney stitch</li>
+    <li>Divaz</li>
+    <li>Dunlop</li>
+
+    <li class="letter">E</li>
+    <li>EarthWorks</li>
+
+    <li class="letter">G</li>
+    <li>Gabbys Dollhouse</li>
+  </ul>
+
+  <ul>
+    <li class="letter">H</li>
+    <li>Heart</li>
+    <li>Heavenly feet</li>
+    <li>Hobos</li>
+    <li>Hush puppies</li>
+
+    <li class="letter">J</li>
+    <li>Jo & Joe</li>
+    <li>JuJu</li>
+  </ul>
+
+  <ul>
+    <li class="letter">K</li>
+    <li>Kickers</li>
+    <li>Krush</li>
+
+    <li class="letter">L</li>
+    <li>Lambretta</li>
+    <li>Lilley</li>
+    <li>LoL</li>
+    <li>Lotus</li>
+    <li>Lunar</li>
+  </ul>
+
+  <ul>
+    <li class="letter">M</li>
+    <li>Marco</li>
+    <li>Lozzi</li>
+    <li>Marvel</li>
+    <li>Maya</li>
+    <li>Grace</li>
+  </ul>
+
+  <ul>
+    <li class="letter">O</li>
+    <li>Original penguin</li>
+    <li>Osaga</li>
+
+    <li class="letter">P</li>
+    <li>Paw patrol</li>
+    <li>Pokemon</li>
+  </ul>
+
+  <ul>
+    <li class="letter">R</li>
+    <li>Red fish</li>
+    <li>Red level</li>
+    <li>Regatta</li>
+    <li>Rieker</li>
+    <li>Rocket Dog</li>
+  </ul>
+
+  <ul>
+    <li class="letter">S</li>
+    <li>Skechers</li>
+    <li>Soft line</li>
+    <li>Softlites</li>
+    <li>Spider-man</li>
+    <li>Stone creek</li>
+    <li>Super mario</li>
+  </ul>
+
+  <ul>
+    <li class="letter">T</li>
+    <li>Totes isotoner</li>
+    <li>Trespass</li>
+    <li>Truffle</li>
+    <li>Trux</li>
+
+    <li class="letter">U</li>
+    <li>Umbro</li>
+  </ul>
+
+  <ul>
+    <li class="letter">W</li>
+    <li>Walkright</li>
+    <li>Wednesday</li>
+    <li>Wrangler</li>
+
+    <li class="letter">X</li>
+    <li>XL</li>
+  </ul>
+
+</div>
+
+        <p class="offered">Offers</p>
+        <div class="chance">
+          <p>SAVE</p>
+          <p>Two pairs for thousand</p>
+          <p>Clearance Outlet</p>
+          <p>Boots Sale</p>
+          <p>View all offers</p>
+        </div>
+
+
+    </nav>
+
+    <hr>
+</header>
+<div class="wrapper">
+
+    <!-- TABS (ONLY ONE PLACE) -->
+    <div class="tabs">
+        <div class="tab tab-register active" id="loginTab">Log in</div>
+        <div class="tab tab-login" id="registerTab">Register</div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="analogy" id="loginBox">
+        <div class="card">
+            <div class="form-container">
+
+
+        <div class="form-container">
+            <div class="input-group">
+                <label>Email id</label>
+                <input type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="Enter password">
+                    <span class="eye-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                    </span>
+                </div>
+            </div>
+
+            <p class="passcode">Forget Password?</p>
+            <div class="logbtn">
+                <button>Log In</button>
+            </div>
+
+            <p style="text-align: center;font-weight: 550;">Or</p>
+
+            <p class="count">Continue with Google <img src="images/Screenshot 2026-01-14 113057.png"> </p>
+            <p style="text-align: center;">Dont't have an account?<span style="color: red;"> Register</span></p>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div class="analogyone" id="registerBox">
+        <div class="card">
+            <div class="form-container">
+
+                <div class="input-group">
+                    <label>Email id</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+
+                <div class="input-group">
+                <label>Password</label>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="Enter password">
+                    <span class="eye-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                    </span>
+                </div>
+            </div>
+
+              <div class="checkbox">
+                    <input type="checkbox"> 
+                    <p>I agree to terms & privacy policy</p>
+              </div>
+
+                <div class="regbtn">
+                    <button id="close">Register</button>
+                </div>
+
+            </div>
+        </div>
+            <div class="congrats" id="congrats">
+    <h3>Congratulations</h3>
+    <p>You have successfully created an account.A confirmation email will be on its way to you shortly containing a verification link.</p>
+    <a href="demo.html"><button>Close</button></a>
+</div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<script>
+    const loginTab = document.getElementById("loginTab");
+const registerTab = document.getElementById("registerTab");
+
+const loginBox = document.getElementById("loginBox");
+const registerBox = document.getElementById("registerBox");
+
+// Default
+loginBox.style.display = "block";
+registerBox.style.display = "none";
+
+loginTab.onclick = () => {
+    loginBox.style.display = "block";
+    registerBox.style.display = "none";
+
+    loginTab.classList.add("active");
+    registerTab.classList.remove("active");
+};
+
+registerTab.onclick = () => {
+    registerBox.style.display = "block";
+    loginBox.style.display = "none";
+
+    registerTab.classList.add("active");
+    loginTab.classList.remove("active");
+};
+
+    const registerBtn = document.getElementById("close");
+const imageBox = document.getElementById("congrats");
+
+registerBtn.onclick = () => {
+    imageBox.style.display = "block";
+};
+
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>
